@@ -1,24 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<settings>
-	<user name="admin">
-		<theme>style7</theme>
-	</user>
-	<user name="huy">
-		<theme>style</theme>
-	</user>
-	<user name="minh">
-		<theme>style3</theme>
-	</user>
-	<user name="tung_anh">
-		<theme>style4</theme>
-	</user>
-	<user name="duc_minh">
-		<theme>style7</theme>
-	</user>
-	<user name="hoang_anh">
-	<theme>style5</theme>
-	</user>
-	<user name="duy_anh">
-	<theme>style5</theme>
-	</user>
-<user name="user1"><theme>style7</theme></user></settings>
+<settings></settings>
