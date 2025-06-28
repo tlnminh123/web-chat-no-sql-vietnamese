@@ -1,0 +1,204 @@
+/* Reset cơ bản */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    overflow: hidden; /* Không cho cuộn trang */
+}
+
+/* Tổng thể */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container bao quanh toàn bộ nội dung */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Header */
+.header {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d89ef;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.header .btn {
+    background-color: #004a99;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.header select {
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Dropdown */
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.user-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #ffffff;
+    color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.user-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.user-dropdown .dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.user-dropdown .dropdown-content a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Tin nhắn */
+.messages {
+    flex: 1;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+
+    /* Tùy chỉnh thanh cuộn */
+    scrollbar-width: thin;              /* Firefox */
+    scrollbar-color: #2d89ef transparent; /* Firefox */
+}
+
+/* Ẩn thanh cuộn khi không hover */
+.messages::-webkit-scrollbar {
+    width: 8px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.messages:hover::-webkit-scrollbar {
+    opacity: 1;
+}
+
+.messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background-color: #2d89ef;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+    background-color: #1b5fa6;
+}
+
+.message {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.message:last-child {
+    border-bottom: none;
+}
+
+.cpp-code, .python-code {
+    background-color: #eee;
+    border-left: 5px solid #007acc;
+    padding: 10px;
+    margin-top: 5px;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    border-radius: 5px;
+}
+
+.python-code {
+    border-left-color: #ff9800;
+}
+
+/* Form gửi tin nhắn */
+.message-form {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message-form textarea {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    resize: vertical;
+    border: 1px solid #ccc;
+}
+
+.message-form button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #2d89ef;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.message-form button:hover {
+    background-color: #1b5fa6;
+}
+
+/* Nút xóa/thu hồi */
+.delete-btn, .revoke-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.revoke-btn {
+    background-color: #ffb100;
+}
+
+.delete-btn:hover {
+    background-color: #cc0000;
+}
+
+.revoke-btn:hover {
+    background-color: #d48f00;
+}

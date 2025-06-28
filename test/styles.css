@@ -1,0 +1,117 @@
+/* styles.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #007BFF;
+    margin-bottom: 30px;
+}
+
+.folder-list {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.folder-list a {
+    display: block;
+    padding: 15px 20px;
+    background-color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #007BFF;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+    text-align: center;
+}
+
+.folder-list a:hover {
+    background-color: #007BFF;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,123,255,0.5);
+}
+
+.folder-list a:first-child {
+    background-color: #f8f9fa;
+    color: #555;
+    font-weight: normal;
+    box-shadow: none;
+    border-radius: 6px;
+}
+
+.folder-list a:first-child:hover {
+    background-color: #e2e6ea;
+    color: #333;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.box-centered {
+        max-width: 450px;
+        margin: 20px auto; /* căn giữa ngang + margin trên dưới */
+        padding: 15px 20px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background-color: #fafafa;
+        box-shadow: 0 0 8px rgb(0 0 0 / 0.05);
+    }
+    .box-centered h2 {
+        margin-top: 0;
+        font-size: 1.3em;
+        color: #333;
+        margin-bottom: 12px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 6px;
+    }
+    .folder-list a {
+        display: inline-block;
+        margin: 4px 8px 4px 0;
+        padding: 5px 12px;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+    .folder-list a:hover {
+        background: #0056b3;
+    }
+    form label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #444;
+    }
+    form input[type="file"] {
+        margin-bottom: 12px;
+    }
+    form button {
+        padding: 7px 16px;
+        background: #28a745;
+        border: none;
+        color: white;
+        font-weight: 600;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    form button:hover {
+        background: #1e7e34;
+    }
+    p.message {
+        margin-top: 15px;
+        font-weight: 700;
+        color: #d9534f;
+    }
+    p.message.success {
+        color: #28a745;
+    }

@@ -1,0 +1,238 @@
+/* Reset cơ bản */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Tắt scroll toàn trang */
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0078D7; /* xanh thương hiệu */
+    color: white;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-left {
+    /* Dành chỗ cho logo/menu nếu cần */
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn {
+    background: #005a9e;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    user-select: none;
+}
+
+.btn:hover {
+    background: #004080;
+}
+
+/* Dropdown user */
+.user-dropdown {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.username {
+    font-weight: 600;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    color: #333;
+    min-width: 180px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 14px;
+    z-index: 1001;
+}
+
+.user-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Messages container */
+.messages {
+ height: 500px;       /* hoặc thay bằng calc(100vh - phần khác nếu muốn full chiều cao) */
+  overflow-y: auto;  
+    margin-top: 25px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    padding: 20px;
+    height: 500px;
+    overflow-y: auto;
+
+    /* Thay đổi để full chiều ngang */
+    width: 100vw; /* 100% viewport width */
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0; /* Nếu muốn sát viền thì bỏ bo góc */
+}
+
+.message b {
+    color: #0078D7;
+}
+
+.message i {
+    font-size: 0.85em;
+    color: #666;
+    margin-left: 8px;
+}
+
+/* Code blocks */
+pre.cpp-code, pre.python-code {
+    background: #272822; /* nền tối cho code */
+    color: #f8f8f2;
+    padding: 12px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 8px;
+    white-space: pre-wrap;
+}
+
+/* C++ code màu xanh lá cây và vàng */
+pre.cpp-code code {
+    color: #a6e22e;
+}
+
+/* Python code màu xanh da trời */
+pre.python-code code {
+    color: #66d9ef;
+}
+
+/* Link tải file */
+.message a {
+    color: #0078D7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.message a:hover {
+    text-decoration: underline;
+}
+
+/* Form gửi tin nhắn */
+.message-form {
+    max-width: 900px;
+    margin: 20px auto 0;
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+}
+
+.message-form textarea {
+    flex-grow: 1;
+    resize: vertical;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+    min-height: 70px;
+    transition: border-color 0.3s ease;
+}
+
+.message-form textarea:focus {
+    outline: none;
+    border-color: #0078D7;
+}
+
+/* Nút gửi */
+.message-form button {
+    background: #0078D7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0 25px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    user-select: none;
+}
+
+.message-form button:hover {
+    background: #005a9e;
+}
+
+/* Nút xóa và thu hồi */
+.delete-btn, .revoke-btn {
+    background: transparent;
+    border: none;
+    color: #d33;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0 8px;
+    margin-left: 10px;
+    user-select: none;
+}
+
+.delete-btn:hover, .revoke-btn:hover {
+    color: #a00;
+}
+
+/* Responsive đơn giản */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-right {
+        margin-top: 10px;
+        gap: 10px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .messages, .message-form {
+        max-width: 100%;
+        padding: 10px;
+    }
+}

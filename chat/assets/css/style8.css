@@ -1,0 +1,188 @@
+body {
+    background-color: #FFE500; /* Màu vàng chủ đạo của Hago */
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.header {
+    background-color: #FFD700; /* Màu vàng đậm hơn cho header */
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn, button[type="submit"] {
+    background-color: #FF4444; /* Màu đỏ đặc trưng của Hago */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px; /* Bo tròn góc */
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.btn:hover, button[type="submit"]:hover {
+    background-color: #CC0000;
+    transform: scale(1.05);
+}
+
+.messages {
+    background-color: rgba(255,255,255,0.9);
+    margin: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    height: 75svh;
+    overflow-y: auto;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+
+    /* Scrollbar custom */
+    scrollbar-width: thin;  /* Firefox */
+    scrollbar-color: rgba(255, 213, 0, 0.3) transparent; /* Vàng nhạt */
+}
+
+.messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 213, 0, 0.3); /* vàng nhạt trong suốt */
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+    transition: background-color 0.3s ease;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 213, 0, 0.6); /* sáng hơn khi hover */
+}
+
+/* Khi hover vào vùng messages thì scrollbar Firefox cũng sáng */
+.messages:hover {
+    scrollbar-color: rgba(255, 213, 0, 0.6) transparent;
+}
+
+.message {
+    background-color: white;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+}
+
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding: 8px 15px;
+    background-color: #FFEE88;
+    border-radius: 20px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: #FFF7CC;
+    border-radius: 10px;
+}
+
+/* ĐÂY LÀ PHẦN SỬA LẠI KHUNG GỬI TIN NHẮN */
+.message-form {
+    position: fixed;
+    bottom: 10px; /* Cách đáy trình duyệt khoảng 10px ~ 0.5cm */
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    gap: 10px;
+    background-color: #FFE500; /* Màu nền trùng body để không lộ */
+    z-index: 999; /* Đè lên mọi thứ */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* đổ bóng nhẹ phía trên */
+}
+
+.message-form textarea {
+    flex: 1;
+    height: 70px;
+    margin: 0;
+    padding: 15px;
+    border: 2px solid #FFD700;
+    border-radius: 15px;
+    resize: none;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.message-form button[type="submit"] {
+    height: 60px;
+    padding: 20px;
+    background-color: #FF4444;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.message-form button[type="submit"]:hover {
+    background-color: #CC0000;
+    transform: scale(1.05);
+}
+
+.code-block {
+    background-color: #F8F8F8;
+    border: 1px solid #EEE;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    position: relative;
+}
+
+.cpp-code {
+    background-color: #2D2D2D;
+    color: #FFFFFF;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.python-code {
+    background-color: #F0F0F0;
+    color: #333;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+select {
+    background-color: white;
+    border: 2px solid #FFD700 !important;
+    border-radius: 20px !important;
+    padding: 8px 15px !important;
+}

@@ -1,0 +1,60 @@
+/* styles.css */
+
+body.forbidden-body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e1e1e, #3c3c3c);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.forbidden-title {
+    font-size: 3em;
+    font-weight: bold;
+    color: #ff4c4c;
+    margin-bottom: 0.3em;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.forbidden-subtitle {
+    font-size: 1.5em;
+    color: #cccccc;
+    margin-bottom: 2em;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+.forbidden-actions .back-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #ff4c4c;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.forbidden-actions .back-button:hover {
+    background-color: #ff1a1a;
+}
+
+@media (max-width: 600px) {
+    .forbidden-title {
+        font-size: 2em;
+    }
+
+    .forbidden-subtitle {
+        font-size: 1.2em;
+    }
+
+    .forbidden-actions .back-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}

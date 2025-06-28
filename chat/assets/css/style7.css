@@ -1,0 +1,318 @@
+:root {
+    --copilot-bg: #f9f4f6; /* Soft pink background */
+    --copilot-primary: #a800ff; /* Copilot purple */
+    --copilot-primary-hover: #8a00d6;
+    --copilot-primary-light: #e8d4ff;
+    --copilot-text: #323130; /* Dark gray for text */
+    --copilot-text-light: #605e5c;
+    --copilot-border: #e8dfe5; /* Light pink border */
+    --copilot-card-bg: #ffffff;
+    --copilot-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.05), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.03);
+    --copilot-success: #107c10;
+    --copilot-warning: #d83b01;
+    --copilot-accent-pink: #ffd6f5;
+    --copilot-accent-border: #ffc1eb;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #f9f4f6 0%, #f6edf2 100%);
+    color: var(--copilot-text);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding-bottom: 100px;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    background-color: var(--copilot-card-bg);
+    border-bottom: 1px solid var(--copilot-border);
+    box-shadow: var(--copilot-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Dropdown Styles */
+.user-dropdown {
+    position: relative;
+    cursor: pointer;
+}
+
+.username {
+    font-weight: 600;
+    color: var(--copilot-primary);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: var(--copilot-card-bg);
+    min-width: 200px;
+    box-shadow: var(--copilot-shadow);
+    border-radius: 8px;
+    z-index: 1;
+    border: 1px solid var(--copilot-accent-border);
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: var(--copilot-text);
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--copilot-accent-pink);
+    color: var(--copilot-primary);
+}
+
+/* Form Elements */
+select {
+    font-family: inherit;
+    border: 1px solid var(--copilot-border);
+    border-radius: 6px;
+    padding: 6px 12px;
+    background-color: white;
+    color: var(--copilot-text);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+select:hover {
+    border-color: var(--copilot-primary-light);
+}
+
+.btn {
+    padding: 8px 16px;
+    background-color: var(--copilot-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--copilot-primary-hover);
+}
+
+/* Messages Container */
+.messages {
+    padding: 20px 24px;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Message Bubbles */
+.message {
+    background-color: var(--copilot-card-bg);
+    padding: 14px 18px;
+    border-radius: 12px;
+    box-shadow: var(--copilot-shadow);
+    border: 1px solid var(--copilot-border);
+    position: relative;
+    max-width: 85%;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.message b {
+    color: var(--copilot-primary);
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+.message i {
+    color: var(--copilot-text-light);
+    font-size: 0.8em;
+    margin-left: 8px;
+    font-style: normal;
+}
+
+.message a {
+    color: var(--copilot-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.message a:hover {
+    text-decoration: underline;
+}
+
+/* Message Form */
+.message-form {
+    padding: 16px 24px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--copilot-accent-pink);
+    border-top: 1px solid var(--copilot-accent-border);
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+.message-form textarea {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid var(--copilot-border);
+    border-radius: 12px;
+    resize: none;
+    font-family: inherit;
+    min-height: 60px;
+    max-height: 120px;
+    background-color: white;
+    transition: all 0.2s;
+}
+
+.message-form textarea:focus {
+    outline: none;
+    border-color: var(--copilot-primary);
+    box-shadow: 0 0 0 2px var(--copilot-primary-light);
+}
+
+.message-form button {
+    padding: 12px 24px;
+    background-color: var(--copilot-primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+    height: 60px;
+}
+
+.message-form button:hover {
+    background-color: var(--copilot-primary-hover);
+}
+
+/* Buttons */
+.delete-btn, .revoke-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--copilot-warning);
+    padding: 0;
+    margin-left: 8px;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.delete-btn:hover, .revoke-btn:hover {
+    opacity: 0.8;
+}
+
+/* Code Blocks */
+.cpp-code, .python-code {
+    background-color: #faf0f7;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 4px solid var(--copilot-primary);
+    overflow-x: auto;
+    font-family: 'Consolas', 'Courier New', monospace;
+    margin: 10px 0;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.cpp-code {
+    border-left-color: var(--copilot-primary);
+}
+
+.python-code {
+    border-left-color: #107c10;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--copilot-border);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--copilot-primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--copilot-primary-hover);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header {
+        padding: 12px 16px;
+    }
+    
+    .messages {
+        padding: 16px;
+    }
+    
+    .message-form {
+        padding: 12px 16px;
+    }
+    
+    .message-form textarea {
+        min-height: 50px;
+    }
+    
+    .message-form button {
+        height: 50px;
+        padding: 8px 16px;
+    }
+}

@@ -1,0 +1,226 @@
+/* style2.css - Giao diện tối kiểu Discord */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+body {
+    margin: 0; padding: 0;
+    background-color: #36393f;
+    color: #dcddde;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    background-color: #2f3136;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 0 rgba(32,34,37,0.1);
+    user-select: none;
+}
+
+.header-left {
+    font-weight: 600;
+    color: #fff;
+    font-size: 18px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+select {
+    background-color: #202225;
+    border: none;
+    color: #b9bbbe;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+select:hover {
+    background-color: #2c2f33;
+}
+
+.btn {
+    background-color: #7289da;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #5b6eae;
+}
+
+/* User dropdown */
+.user-dropdown {
+    position: relative;
+    cursor: pointer;
+    color: #b9bbbe;
+    font-weight: 500;
+    user-select: none;
+}
+
+.username {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #2f3136;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    border-radius: 6px;
+    z-index: 1000;
+    padding: 8px 0;
+}
+
+.dropdown-content a {
+    color: #b9bbbe;
+    padding: 8px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #40444b;
+    color: #fff;
+}
+
+/* Messages container */
+.messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #2f3136;
+}
+
+/* Each message */
+.message {
+    margin-bottom: 12px;
+    background-color: #36393f;
+    padding: 10px 14px;
+    border-radius: 8px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+    position: relative;
+    word-break: break-word;
+}
+
+.message b {
+    color: #7289da;
+    margin-right: 8px;
+}
+
+.message i {
+    color: #72767d;
+    font-size: 11px;
+    position: absolute;
+    right: 10px;
+    bottom: 8px;
+}
+
+.cpp-code, .python-code {
+    background-color: #202225;
+    color: #dcddde;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 13px;
+    overflow-x: auto;
+    margin-top: 6px;
+    white-space: pre-wrap;
+}
+
+/* Form gửi tin nhắn */
+.message-form {
+    background-color: #40444b;
+    padding: 15px 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-top: 1px solid #2f3136;
+}
+
+.message-form textarea {
+    flex-grow: 1;
+    resize: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: none;
+    background-color: #2f3136;
+    color: #dcddde;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    height: 50px;
+}
+
+.message-form textarea::placeholder {
+    color: #72767d;
+}
+
+.message-form button {
+    background-color: #7289da;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.message-form button:hover {
+    background-color: #5b6eae;
+}
+
+/* Nút xóa, thu hồi */
+.delete-btn, .revoke-btn {
+    background-color: transparent;
+    border: none;
+    color: #b9bbbe;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 2px 6px;
+    margin-left: 8px;
+    transition: color 0.2s ease;
+}
+
+.delete-btn:hover {
+    color: #f04747;
+}
+
+.revoke-btn:hover {
+    color: #faa61a;
+}
+
+/* Scrollbar style for messages */
+.messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.messages::-webkit-scrollbar-track {
+    background: #2f3136;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background-color: #202225;
+    border-radius: 4px;
+}
+

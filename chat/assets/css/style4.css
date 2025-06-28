@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #e5ddd5;
+}
+
+.header {
+    background-color: #128c7e;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 999;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.username {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Nút Admin Panel */
+.btn {
+    display: inline-block;
+    background-color: #128c7e; /* Màu xanh đặc trưng của LINE */
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    user-select: none;
+}
+
+.btn:hover, 
+.btn:focus {
+    background-color: #0b6651; /* Màu tối hơn khi hover/focus */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    outline: none;
+}
+
+.btn:active {
+    background-color: #0a5c48; /* Nhấn nút */
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+}
+
+
+.messages {
+    padding: 20px;
+    max-height: 75vh;
+    overflow-y: auto;
+    background-color: #dcf8c6;
+}
+
+.message {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+    position: relative;
+    clear: both;
+}
+
+.message b {
+    font-size: 0.8em;
+    color: #555;
+}
+
+.message i {
+    font-size: 0.7em;
+    color: #888;
+    margin-top: 5px;
+}
+
+.message-form {
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+}
+
+.message-form textarea {
+    flex: 1;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+.message-form button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #128c7e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Bong bóng tin nhắn */
+.message .cpp-code,
+.message .python-code,
+.message .bubble {
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-top: 5px;
+    display: inline-block;
+    position: relative;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.message .bubble {
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+/* Tin nhắn của mình */
+.message:has(.revoke-btn) {
+    align-self: flex-end;
+}
+
+.message:has(.revoke-btn) .bubble {
+    background-color: #dcf8c6;
+    border: 1px solid #b2d8b2;
+}
+
+/* Tin nhắn code */
+.cpp-code, .python-code {
+    font-family: monospace;
+    background-color: #2f2f2f;
+    color: #f1f1f1;
+    overflow-x: auto;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Nút thu hồi và xóa */
+.revoke-btn, .delete-btn {
+    font-size: 0.8em;
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    margin-top: 5px;
+}

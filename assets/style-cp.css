@@ -1,0 +1,90 @@
+/* Reset cơ bản */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #0f1419;
+}
+
+/* Body nền trắng, căn giữa */
+body {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 15px;
+}
+
+/* Container form */
+form {
+    background: #f5f8fa; /* màu nền Twitter nhạt */
+    border: 1px solid #e1e8ed;
+    border-radius: 12px;
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
+/* Tiêu đề */
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 24px;
+    color: #1da1f2; /* màu xanh Twitter */
+}
+
+/* Label */
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Input */
+input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 18px;
+    border: 1.5px solid #ccd6dd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.2s ease-in-out;
+}
+
+input[type="password"]:focus {
+    outline: none;
+    border-color: #1da1f2;
+    box-shadow: 0 0 5px #1da1f2aa;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px 0;
+    background-color: #1da1f2;
+    border: none;
+    border-radius: 9999px; /* bo tròn max như Twitter */
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0d8ddb;
+}
+
+/* Responsive: nhỏ hơn 420px thì rộng 100% */
+@media (max-width: 420px) {
+    form {
+        padding: 20px;
+        width: 100%;
+        border-radius: 10px;
+    }
+}

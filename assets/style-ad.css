@@ -1,0 +1,428 @@
+/* Microsoft Admin Panel - Updated 2025-06-26 */
+/* Fonts & Root Variables */
+:root {
+  --primary-color: #0078d4;
+  --secondary-color: #106ebe;
+  --accent-color: #ffb900;
+  --light-color: #f8f9fa;
+  --dark-color: #323130;
+  --success-color: #107c10;
+  --danger-color: #d83b01;
+  --warning-color: #ffaa44;
+  --border-radius: 4px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --font: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+
+/* Layout */
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background-color: #f3f2f1;
+  color: var(--dark-color);
+}
+
+.admin-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: var(--dark-color);
+  color: white;
+  padding: 20px 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+  padding: 0 20px 20px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tab-links {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.tab-links li {
+  margin-bottom: 5px;
+}
+
+.tab-links button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.tab-links button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.tab-links button.active {
+  background-color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Tab Content */
+.tab-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tab {
+  display: none;
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.tab.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab h3::before {
+  content: "📑 ";
+}
+.tab h3 {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Form Tabs */
+.form-tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.form-tab-btn {
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--dark-color);
+  transition: var(--transition);
+}
+
+.form-tab-btn.active {
+  border-bottom-color: var(--primary-color);
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.form-tab-btn:hover {
+  color: var(--primary-color);
+}
+
+/* Register Form */
+#register-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+#register-form input, #register-form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+#register-form input:focus, #register-form select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.3);
+}
+
+#register-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#register-form button:hover {
+  background-color: var(--secondary-color);
+}
+
+#register-msg {
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+  border-radius: var(--border-radius);
+}
+
+/* Tables */
+.table-container {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+thead {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.9rem;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Status */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-active {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: var(--success-color);
+}
+
+.status-banned {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: var(--danger-color);
+}
+
+.status-pending {
+  background-color: rgba(255, 193, 7, 0.1);
+  color: var(--warning-color);
+}
+
+/* Buttons */
+button[class^="btn-"] {
+  padding: 6px 12px;
+  border-radius: var(--border-radius);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-ban {
+  background: rgba(255, 193, 7, 0.1);
+  color: var(--warning-color);
+}
+.btn-ban:hover {
+  background-color: rgba(255, 193, 7, 0.2);
+}
+
+.btn-unban {
+  background: rgba(40, 167, 69, 0.1);
+  color: var(--success-color);
+}
+.btn-unban:hover {
+  background-color: rgba(40, 167, 69, 0.2);
+}
+
+.btn-role {
+  background: rgba(0, 120, 212, 0.1);
+  color: var(--primary-color);
+}
+.btn-role:hover {
+  background-color: rgba(0, 120, 212, 0.2);
+}
+
+.btn-pass {
+  background: rgba(153, 102, 255, 0.1);
+  color: #6633cc;
+}
+.btn-pass:hover {
+  background-color: rgba(153, 102, 255, 0.2);
+}
+
+.btn-view {
+  background: rgba(0, 204, 153, 0.1);
+  color: #00aa88;
+}
+.btn-view:hover {
+  background-color: rgba(0, 204, 153, 0.2);
+}
+
+.btn-delete {
+  background: rgba(220, 53, 69, 0.1);
+  color: var(--danger-color);
+}
+.btn-delete:hover {
+  background-color: rgba(220, 53, 69, 0.2);
+}
+
+/* Utilities */
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+}
+
+.empty-state::before {
+  content: "📭";
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.tab-links a.btn-back {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: white;
+  background-color: rgba(255,255,255,0.05);
+  border-left: 4px solid var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.tab-links a.btn-back:hover {
+  background-color: rgba(255,255,255,0.15);
+  color: var(--accent-color);
+}
+
+/* Căn trái toàn bộ bảng */
+#userinfo-list table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+/* Căn trái từng ô */
+#userinfo-list th,
+#userinfo-list td {
+  text-align: left;
+  padding: 10px 15px;
+  vertical-align: top;
+}
+
+/* Header nổi bật */
+#userinfo-list th {
+  background-color: var(--primary-color);
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+#userinfo {
+  position: relative;
+  padding-top: 40px;
+}
+
+/* Nút xuất Excel góc phải */
+.export-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px; /* ← đổi từ left sang right */
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #0078D4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.export-btn:hover {
+  background-color: #005A9E;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.user-table th, .user-table td {
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.user-table th {
+  background-color: #f0f0f0;
+}
+
+.user-table td code {
+  font-family: monospace;
+  color: #333;
+  background: #f9f9f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.user-table code {
+  font-family: monospace;
+  color: #007acc;
+  background: #f3f3f3;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
