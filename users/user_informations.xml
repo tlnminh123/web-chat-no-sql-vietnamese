@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<users>
+  <user>
+    <stt>1</stt>
+    <username>admin</username>
+    <name>no</name>
+    <date_of_birth>no</date_of_birth>
+    <email>no</email>
+  </user>
+  <user>
+    <stt>2</stt>
+    <username>user1</username>
+    <name>no</name>
+    <date_of_birth>no</date_of_birth>
+    <email>no</email>
+  </user>
+</users>

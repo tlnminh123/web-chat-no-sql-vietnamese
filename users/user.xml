@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<users>
+  <user>
+    <stt>1</stt>
+    <username>admin</username>
+    <password>camvao</password>
+    <old_password>a</old_password>
+    <banned>no</banned>
+    <role>yes</role>
+    <imformation_updates>no</imformation_updates>
+  </user>
+  <user>
+    <stt>2</stt>
+    <username>user1</username>
+    <password>a</password>
+    <old_password>a</old_password>
+    <banned>no</banned>
+    <role>no</role>
+    <imformation_updates>no</imformation_updates>
+  </user>
+</users>

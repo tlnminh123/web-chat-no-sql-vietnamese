@@ -1,7 +1,6 @@
 /vendor/
 /.env
 *.log
-*.xml
 config.php
 .DS_Store
 Thumbs.db
