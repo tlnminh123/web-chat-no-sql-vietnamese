@@ -9,7 +9,6 @@ Một hệ thống chat real-time xây dựng hoàn toàn bằng PHP, AJAX và l
 - 🚫 Kiểm tra trạng thái tài khoản (ban / unban)
 - 📁 Lưu trữ bằng XML, không cần MySQL
 
-## 👤 Tài khoản dùng thử
 ## 👤 Tài khoản dùng thử (Demo Account)
 
 Dưới đây là danh sách các tài khoản được công bố công khai nhằm mục đích kiểm thử hệ thống. Người dùng có thể sử dụng các tài khoản này để đăng nhập vào hệ thống và thử nghiệm các chức năng.
