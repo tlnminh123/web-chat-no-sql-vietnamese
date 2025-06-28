@@ -16,7 +16,7 @@ Dưới đây là danh sách các tài khoản được công bố công khai nh
 
 | Loại tài khoản                  | Tên đăng nhập | Mật khẩu     | Quyền hạn                                           |
 |---------------------------------|----------------|--------------|----------------------------------------------------|
-| 👑 Quản trị viên (Admin cấp 1) | admin           | a            \| Toàn quyền (ban user, đổi mật khẩu, chỉnh sửa...) |
+| 👑 Quản trị viên (Admin cấp 1) | admin           | a            | Toàn quyền (ban user, đổi mật khẩu, chỉnh sửa...)  |
 | 👤 Người dùng thường            | user1          | a            | Chat bình thường                                   |
 
 > 📝 **Lưu ý:** Các tài khoản demo có thể bị reset bất kỳ lúc nào. Không nên sử dụng cho mục đích lưu trữ thông tin quan trọng.
