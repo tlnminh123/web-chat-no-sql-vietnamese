@@ -1,0 +1,4 @@
+Options -Indexes
+<FilesMatch "\.xml$">
+    Require all denied
+</FilesMatch>
